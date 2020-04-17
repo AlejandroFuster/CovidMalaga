@@ -8,7 +8,9 @@
 #
 
 my_packages = c("readr", "dplyr", "ggplot2","reshape2","polyreg","pracma","scales","DT")
-
+r = getOption("repos")
+r["CRAN"] = "http://cran.us.r-project.org"
+options(repos = r)
 install_if_missing = function(p) {
   if (p %in% rownames(installed.packages()) == FALSE) {
     install.packages(p)
