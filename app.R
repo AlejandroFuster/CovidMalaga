@@ -6,6 +6,8 @@
 #
 #    http://shiny.rstudio.com/
 #
+port <- Sys.getenv('PORT')
+
 library(readr)
 library(dplyr)
 library(ggplot2)
@@ -100,3 +102,10 @@ server <- function(input, output) {
 
 # Run the application 
 shinyApp(ui = ui, server = server)
+
+shiny::runApp(
+  appDir = getwd(),
+  host = '0.0.0.0',
+  port = as.numeric(port)
+)
+
