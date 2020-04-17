@@ -101,11 +101,11 @@ server <- function(input, output) {
 }
 
 # Run the application 
-shinyApp(ui = ui, server = server)
-
 shiny::runApp(
   appDir = getwd(),
   host = '0.0.0.0',
-  port = as.numeric(port)
+  port = as.numeric(port),
+  ui = ui,
+  server = server
 )
 
